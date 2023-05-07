@@ -1,5 +1,5 @@
 import 'package:advicer/2_application/core/services/theme_service.dart';
-import 'package:advicer/2_application/pages/features/advice/advice_page.dart';
+import 'package:advicer/2_application/pages/advice/advicer_page.dart';
 import 'package:advicer/theme.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
@@ -34,7 +34,7 @@ class MainApp extends StatelessWidget {
               themeService.isDarkModeOn ? ThemeMode.dark : ThemeMode.light,
           theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
-          home: const AdvicePage(),
+          home: const AdvicerPageWrapperProvider(),
         );
       },
     );
