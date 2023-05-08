@@ -6,13 +6,13 @@ import 'package:equatable/equatable.dart';
 part 'advicer_state.dart';
 
 class AdvicerCubit extends Cubit<AdvicerCubitState> {
-  AdvicerCubit() : super(AdvicerInitial());
-  final AdviceUseCases _adviceUseCases = AdviceUseCases();
+  AdvicerCubit({required this.adviceUseCases}) : super(AdvicerInitial());
+  final AdviceUseCases adviceUseCases;
   // could also use other usecases
 
   void adviceRequested() async {
     emit(AdvicerStateLoading());
-    final failureOrAdvice = await _adviceUseCases.getAdvice();
+    final failureOrAdvice = await adviceUseCases.getAdvice();
 
     failureOrAdvice.fold(
       (failure) {
